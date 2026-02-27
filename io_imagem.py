@@ -10,6 +10,12 @@ def abrir_imagem(caminho):
 
     return array_img
 
+def exibir_imagem(array_img):
+    img = Image.fromarray(array_img, mode="RGB")
+    img.show()
+
+
+
 def salvar_imagem(array_img, caminho):
     img = Image.fromarray(array_img, mode="RGB")
     img.save(caminho)
