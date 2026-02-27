@@ -12,7 +12,7 @@ com suporte a stride, funções de ativação e filtros espaciais.
 
 ---
 
-## 🎯 Objetivo
+## Objetivo
 
 Desenvolver um sistema capaz de:
 
