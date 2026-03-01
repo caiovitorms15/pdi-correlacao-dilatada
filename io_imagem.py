@@ -11,8 +11,27 @@ def abrir_imagem(caminho):
     return array_img
 
 def exibir_imagem(array_img):
-    img = Image.fromarray(array_img, mode="RGB")
+
+    if len(array_img.shape) == 2:
+        array_img = np.stack([array_img]*3, axis=2)
+
+    img = Image.fromarray(array_img.astype(np.uint8), mode="RGB")
     img.show()
+
+def normalizar_para_uint8(img):
+
+    img = img.astype(np.float64)
+
+    minimo = np.min(img)
+    maximo = np.max(img)
+
+    if maximo - minimo == 0:
+        return np.zeros_like(img, dtype=np.uint8)
+
+    img = (img - minimo) / (maximo - minimo)
+    img = img * 255
+
+    return img.astype(np.uint8)
 
 
 
