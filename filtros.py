@@ -1,14 +1,14 @@
 import numpy as np
 
-def box_kernel(linhas, colunas):
+def box_mascara(linhas, colunas):
     
     valor = 1.0 / (linhas * colunas)
-    kernel = np.full((linhas, colunas), valor)
-    return kernel
+    mascara = np.full((linhas, colunas), valor)
+    return mascara
 
 def gaussiano_5x5():
     
-    kernel = np.array([
+    mascara = np.array([
         [1,  4,  6,  4, 1],
         [4, 16, 24, 16, 4],
         [6, 24, 36, 24, 6],
@@ -16,10 +16,10 @@ def gaussiano_5x5():
         [1,  4,  6,  4, 1]
     ], dtype=float)
 
-    soma = np.sum(kernel)
-    kernel = kernel / soma
+    soma = np.sum(mascara)
+    mascara = mascara / soma
 
-    return kernel
+    return mascara
 
 def sobel_horizontal():
     
