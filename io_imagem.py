@@ -1,5 +1,7 @@
+import matplotlib.pyplot as plt
 from PIL import Image
 import numpy as np
+
 
 def abrir_imagem(caminho):
     img = Image.open(caminho)
@@ -38,3 +40,17 @@ def normalizar_para_uint8(img):
 def salvar_imagem(array_img, caminho):
     img = Image.fromarray(array_img, mode="RGB")
     img.save(caminho)
+
+
+def exibir_imagem_inline(array_img, titulo=None):
+    
+    if len(array_img.shape) == 2:
+        plt.imshow(array_img, cmap='gray')
+    else:
+        plt.imshow(array_img.astype(np.uint8))
+    
+    if titulo:
+        plt.title(titulo)
+    
+    plt.axis("off")
+    plt.show()
