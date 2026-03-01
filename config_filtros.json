@@ -1,0 +1,103 @@
+{
+    "filtros": [
+        {
+            "nome": "Gaussiano 5x5",
+            "tipo": "gaussiano_5x5",
+            "mascara": [
+                [1,  4,  6,  4, 1],
+                [4, 16, 24, 16, 4],
+                [6, 24, 36, 24, 6],
+                [4, 16, 24, 16, 4],
+                [1,  4,  6,  4, 1]
+            ],
+            "normalizar_mascara": true,
+            "stride": 1,
+            "taxa_dilatacao": 1,
+            "ativacao": "identidade"
+        },
+        {
+            "nome": "Box 1x10",
+            "tipo": "box",
+            "mascara": [
+                [0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1]
+            ],
+            "normalizar_mascara": false,
+            "stride": 1,
+            "taxa_dilatacao": 1,
+            "ativacao": "identidade"
+        },
+        {
+            "nome": "Box 10x1",
+            "tipo": "box",
+            "mascara": [
+                [0.1],
+                [0.1],
+                [0.1],
+                [0.1],
+                [0.1],
+                [0.1],
+                [0.1],
+                [0.1],
+                [0.1],
+                [0.1]
+            ],
+            "normalizar_mascara": false,
+            "stride": 1,
+            "taxa_dilatacao": 1,
+            "ativacao": "identidade"
+        },
+        {
+            "nome": "Box 10x10",
+            "tipo": "box",
+            "mascara": [
+                [0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01],
+                [0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01],
+                [0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01],
+                [0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01],
+                [0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01],
+                [0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01],
+                [0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01],
+                [0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01],
+                [0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01],
+                [0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01]
+            ],
+            "normalizar_mascara": false,
+            "stride": 1,
+            "taxa_dilatacao": 1,
+            "ativacao": "identidade"
+        },
+        {
+            "nome": "Sobel Horizontal",
+            "tipo": "sobel_horizontal",
+            "mascara": [
+                [-1, -2, -1],
+                [ 0,  0,  0],
+                [ 1,  2,  1]
+            ],
+            "normalizar_mascara": false,
+            "stride": 1,
+            "taxa_dilatacao": 1,
+            "ativacao": "identidade"
+        },
+        {
+            "nome": "Sobel Vertical",
+            "tipo": "sobel_vertical",
+            "mascara": [
+                [-1,  0,  1],
+                [-2,  0,  2],
+                [-1,  0,  1]
+            ],
+            "normalizar_mascara": false,
+            "stride": 1,
+            "taxa_dilatacao": 1,
+            "ativacao": "identidade"
+        }
+    ],
+    "parametros_globais": {
+        "taxa_dilatacao_min": 1,
+        "taxa_dilatacao_max": 5,
+        "stride_min": 1,
+        "stride_max": 5,
+        "ativacoes_disponiveis": ["relu", "identidade"]
+    }
+}
