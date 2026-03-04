@@ -46,11 +46,11 @@ def gerar_nome_saida(pasta, nome_imagem, nome_filtro, r=1, stride=1, ativacao="i
     nome = f"{nome_imagem}_{nome_filtro_limpo}_r{r}_s{stride}_{ativacao}.png"
     return os.path.join(pasta, nome)
 
-    def carregar_mascara(filtro_config):
+def carregar_mascara(filtro_config):
     mascara = np.array(filtro_config["mascara"], dtype=np.float64)
     if filtro_config.get("normalizar_mascara", False):
         mascara = mascara / np.sum(mascara)
     return mascara
 
-    def eh_sobel(nome):
+def eh_sobel(nome):
     return "sobel" in nome.lower()
