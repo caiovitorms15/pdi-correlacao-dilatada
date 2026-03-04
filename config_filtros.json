@@ -13,7 +13,8 @@
             "normalizar_mascara": true,
             "stride": 1,
             "taxa_dilatacao": 1,
-            "ativacao": "identidade"
+            "ativacao": "identidade",
+            "pivo": null
         },
         {
             "nome": "Box 1x10",
@@ -24,7 +25,8 @@
             "normalizar_mascara": false,
             "stride": 1,
             "taxa_dilatacao": 1,
-            "ativacao": "identidade"
+            "ativacao": "identidade",
+            "pivo": null
         },
         {
             "nome": "Box 10x1",
@@ -44,7 +46,8 @@
             "normalizar_mascara": false,
             "stride": 1,
             "taxa_dilatacao": 1,
-            "ativacao": "identidade"
+            "ativacao": "identidade",
+            "pivo": null
         },
         {
             "nome": "Box 10x10",
@@ -64,7 +67,8 @@
             "normalizar_mascara": false,
             "stride": 1,
             "taxa_dilatacao": 1,
-            "ativacao": "identidade"
+            "ativacao": "identidade",
+            "pivo": null
         },
         {
             "nome": "Sobel Horizontal",
@@ -77,7 +81,8 @@
             "normalizar_mascara": false,
             "stride": 1,
             "taxa_dilatacao": 1,
-            "ativacao": "identidade"
+            "ativacao": "identidade",
+            "pivo": null
         },
         {
             "nome": "Sobel Vertical",
@@ -90,7 +95,8 @@
             "normalizar_mascara": false,
             "stride": 1,
             "taxa_dilatacao": 1,
-            "ativacao": "identidade"
+            "ativacao": "identidade",
+            "pivo": null
         }
     ],
     "parametros_globais": {
