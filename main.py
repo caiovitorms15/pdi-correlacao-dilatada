@@ -2,20 +2,10 @@ import os
 import json
 import numpy as np
 
-from funcoesaux import processar_sobel, gerar_nome_saida
+from funcoesaux import *
 from correlacao import correlacao
-from io_imagem import abrir_imagem, normalizar_para_uint8, salvar_imagem, exibir_imagem
+from io_imagem import abrir_imagem, salvar_imagem, exibir_imagem
 
-
-def carregar_mascara(filtro_config):
-    mascara = np.array(filtro_config["mascara"], dtype=np.float64)
-    if filtro_config.get("normalizar_mascara", False):
-        mascara = mascara / np.sum(mascara)
-    return mascara
-
-
-def eh_sobel(nome):
-    return "sobel" in nome.lower()
 
 
 def main():
