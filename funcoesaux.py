@@ -28,8 +28,8 @@ def processar_sobel(resultado):
     return normalizar_para_uint8(resultado)
 
 
-def aplicar_e_exibir(img, mascara, nome_filtro, nome_imagem, stride=1, r=1, ativacao="identidade", sobel=False):
-    resultado = correlacao(img, mascara, stride=stride, r=r, ativacao=ativacao)
+def aplicar_e_exibir(img, mascara, nome_filtro, nome_imagem, stride=1, r=1, ativacao="identidade", sobel=False, pivo=None):
+    resultado = correlacao(img, mascara, stride=stride, r=r, ativacao=ativacao, pivo=pivo)
     
     if sobel:
         resultado = processar_sobel(resultado)
