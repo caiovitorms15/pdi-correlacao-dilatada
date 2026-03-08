@@ -29,16 +29,18 @@ def processar_sobel(resultado):
 
 
 def aplicar_e_exibir(img, mascara, nome_filtro, nome_imagem, stride=1, r=1, ativacao="identidade", sobel=False, pivo=None):
+    h_orig, w_orig = img.shape[:2]
     resultado = correlacao(img, mascara, stride=stride, r=r, ativacao=ativacao, pivo=pivo)
+    h_out, w_out = resultado.shape[:2]
     
     if sobel:
         resultado = processar_sobel(resultado)
-        titulo = f"{nome_filtro} (abs + expansão histograma) r={r}, stride={stride}"
+        titulo = f"{nome_filtro} (abs + expansão histograma) r={r}, stride={stride} (saída: {h_out}x{w_out})"
     else:
         resultado = np.clip(resultado, 0, 255).astype(np.uint8)
-        titulo = f"{nome_filtro} r={r}, stride={stride}, ativação={ativacao}"
+        titulo = f"{nome_filtro} r={r}, stride={stride}, ativação={ativacao} (saída: {h_out}x{w_out})"
     
-    exibir_lado_a_lado(img, resultado, titulo_original=f"{nome_imagem} - Original", titulo_resultado=titulo)
+    exibir_lado_a_lado(img, resultado, titulo_original=f"{nome_imagem} - Original ({h_orig}x{w_orig})", titulo_resultado=titulo)
     return resultado
 
 def gerar_nome_saida(pasta, nome_imagem, nome_filtro, r=1, stride=1, ativacao="identidade"):
