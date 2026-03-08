@@ -27,8 +27,8 @@ def correlacao(img, mascara, stride=1, r=1, ativacao="identidade", pivo=None):
     fim_i = altura - (k_altura_dil - 1 - pivo_i_dil)
     fim_j = largura - (k_largura_dil - 1 - pivo_j_dil)
 
-    out_altura = (fim_i - inicio_i) // stride
-    out_largura = (fim_j - inicio_j) // stride
+    out_altura = (fim_i - inicio_i - 1) // stride + 1
+    out_largura = (fim_j - inicio_j - 1) // stride + 1
 
     if out_altura <= 0 or out_largura <= 0:
         raise ValueError("Máscara maior que a imagem para os parâmetros escolhidos.")
